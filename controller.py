@@ -3,10 +3,22 @@ from boyer_moore import buscar
 from writefile import WriteFile
 
 class ControladorBM:
+	'''
+	Esta clase se encarga de integrar todos los
+	componentes, creando así el funcionamiento
+	del programa
+	'''
 	def __init__(self):
+		'''
+		Constructor de la clase ControladorBM
+		'''
 		self.opcion = None
 
 	def menu_usuario(self):
+		'''
+		El menu que se desplega al usuario al ingresar al 
+		programa
+		'''
 		print('-'*45)
 		print('Bievenido al programa de búsqueda de texto BM')
 		while True:
@@ -28,6 +40,10 @@ class ControladorBM:
 				print('Opcion no válida, intente otra vez...')
 				
 	def texto_pantalla(self):
+		'''
+		El proceso que se ejecuta si el usuario solicita
+		digitar la información por pantalla
+		'''
 		lineas_indice = []
 		list_contenido = []
 		
@@ -42,16 +58,24 @@ class ControladorBM:
 
 		escribir_archivo = WriteFile(contenido = list_contenido, patron=patron, lista_coincide=lineas_indice)
 		escribir_archivo.seleccionar_texto()
-		
 
 
 	def preguntar_usuario_archivo(self):
+		'''
+		En caso de que el usuario digite la opción
+		de archivo, se le solicita que introduzca el nombre
+		:returns: el nombre del archivo
+		:rtype: str
+		'''
 		print('-'*45)
 		print('El archivo debe estar en la carpeta entrada...')
 		archivo = str(input('Introduzca el nombre del archivo: '))
 		return archivo
 
 	def usar_archivos(self):
+		'''
+		Implementación del código para archivos de texto
+		'''
 		lineas_indice = []
 
 		archivo_entrada = self.preguntar_usuario_archivo()
@@ -73,6 +97,11 @@ class ControladorBM:
 			escribir_archivo.seleccionar_texto()
 
 	def ejecutar_programa(self):
+		'''
+		Esta función integra todos los componentes
+		descritos en el menú en una sola función
+		haciendo los llamados necesarios
+		'''
 		self.menu_usuario()
 
 		if self.opcion == '1':
