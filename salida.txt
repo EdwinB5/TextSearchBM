@@ -1,4 +1,4 @@
 esto es un texto de prueba
 en donde se plantea el uso de este algoritmo
-de nombre Boyer Moore, es de suma importancia
+de nombre |Bo|yer Moore, es de suma importancia
 realizar este programa.
