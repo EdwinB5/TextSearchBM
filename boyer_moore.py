@@ -14,7 +14,10 @@ def buscar(contenido, patron):
 	'''
 	Esta función implementa el algoritmo
 	de Boyer Moore, teniendo en cuenta el
-	bad char heuristic
+	bad char heuristic. El autor del código 
+	base es Atul Kumar (www.facebook.com/atul.kr.007)
+	se realizaron leves modificaciones para adaptarlo
+	a la implementación requerida.
 	'''
 	caracteres_contenido = len(contenido)
 	caracteres_patron = len(patron)

@@ -24,7 +24,7 @@ class WriteFile:
 
 	def escribir_texto(self):
 		try:
-			name_file = 'salida.txt'
+			name_file = 'salida/'+'salida.txt'
 			print('-'*45)
 			print(f'Nombre del archivo: {name_file}')
 			print('-'*45)

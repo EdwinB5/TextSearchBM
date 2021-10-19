@@ -6,7 +6,7 @@ class ReadFile:
 	contenido de tipo lista de líneas o una
 	cadena de texto
 	'''
-	def __init__(self, ruta:str='', nombre_archivo:str=''):
+	def __init__(self, ruta:str='entrada/', nombre_archivo:str=''):
 		'''
 		Constructor de la clase ReadFile
 		:param ruta: la ruta donde estará el archivo
@@ -19,6 +19,7 @@ class ReadFile:
 		self.archivo_localizacion = ruta + nombre_archivo
 		self.contenido = None
 		self.extension = None
+		self.existe = False
 
 	def obtener_extension(self):
 		'''
@@ -41,7 +42,7 @@ class ReadFile:
 				lineas = abrir_archivo.readlines()
 				self.contenido = lineas
 				abrir_archivo.close()
-			
+				self.existe = True
 			#self.imprimir_lineas()
 			except:
 				print('El archivo no existe, intenta de nuevo...')
